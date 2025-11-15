@@ -16,6 +16,30 @@
     --sidebar-width: 400px;
 }
 
+.pagebody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 70vh;
+    position: relative;
+}
+
+.main-gif {
+    width: min(400px, 40vw);
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 8vh;
+    /* moves it down ~5% of the screen height */
+}
+
+.bigtext {
+    font-size: clamp(2rem, 5vw, 5rem);
+    text-align: center;
+    position: relative;
+}
+
 @font-face {
     font-family: 'picto';
     src: url('pictochat.otf') format('opentype');
