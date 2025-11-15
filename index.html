@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GET LIT 4EVER</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body id="bg">
+    <div id="overlay"></div>
+    <div class="topbar">
+        <img style="width:48px;height:48px;padding:10px;" src="assets/server.jpg">
+
+        <div class="text">
+            <span class="titletxt" id="typedText"></span>
+        </div>
+
+        <div class="navbar">
+            <div class="button">
+                <a href="">PROJECTS</a>
+            </div>
+            <div class="button">
+                <a href="postlist.html">POSTINGS</a>
+            </div>
+            <div class="button">
+                <a href="about.html">ABOUT</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "GET LIT SUNDAY",
+            "GET LIT MONDAY",
+            "GET LIT TUESDAY",
+            "GET LIT WEDNESDAY",
+            "GET LIT THURSDAY",
+            "GET LIT FRIDAY",
+            "GET LIT SATURDAY",
+            "GET LIT 4EVER"
+        ];
+
+        let index = new Date().getDay(); // start with correct day
+        let charIndex = 0;
+        let deleting = false;
+        const speed = 50;
+        const pause = 1000;
+
+        function tick() {
+            const el = document.getElementById("typedText");
+            const current = messages[index];
+
+            if (!deleting && charIndex <= current.length) {
+                el.textContent = current.substring(0, charIndex++);
+                setTimeout(tick, speed);
+            } else if (deleting && charIndex >= 0) {
+                el.textContent = current.substring(0, charIndex--);
+                setTimeout(tick, speed);
+            } else {
+                // switch modes
+                if (!deleting) {
+                    deleting = true;
+                    setTimeout(tick, pause);
+                } else {
+                    deleting = false;
+                    index = (index + 1) % messages.length;
+                    charIndex = 0;
+                    setTimeout(tick, speed);
+                }
+            }
+        }
+
+        tick();
+    </script>
+    <div class="pagebody" style="display: flex; justify-content: center; position: relative;">
+        <img width="400" height="400" style="position: relative; top: 50px;" src="assets/spikington.gif">
+        <header class="bigtext"> GET LIT 4EVER</header>
+    </div>
+
+    <div class="caution top">
+        <img src="assets/scrollington.gif" alt="Caution Image Top">
+    </div>
+
+    <div class="caution lower">
+        <img src="assets/scrollington.gif" alt="Caution Image Lower">
+    </div>
+
+    <div id="sub-bg">
+
+    </div>
+</body>
+
+
+
+</html>
