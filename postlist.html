@@ -43,7 +43,8 @@
             .then(response => response.json())
             .then(posts => {
                 const list = document.getElementById('post-list');
-                // Optional: sort posts by date descending
+                //sort posts by date descending
+                //goal is to add sorting by author eventually as well/searching
                 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 posts.forEach(post => {
                     const li = document.createElement('li');
