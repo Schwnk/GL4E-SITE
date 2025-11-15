@@ -23,7 +23,7 @@
 
         <div class="navbar">
             <div class="button">
-                <a>PROJECTS</a>
+                <a href="projects.html">PROJECTS</a>
             </div>
             <div class="button">
                 <a style="color:blue">POSTINGS</a>
@@ -35,7 +35,35 @@
 
         </div>
     </div>
+    <h1>Blog Posts</h1>
+    <ul id="post-list"></ul>
 
+    <script>
+        fetch('posts/posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const list = document.getElementById('post-list');
+                // Optional: sort posts by date descending
+                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                posts.forEach(post => {
+                    const li = document.createElement('li');
+
+                    const a = document.createElement('a');
+                    a.href = post.url;
+                    a.textContent = post.title;
+                    a.className = 'title';
+
+                    const meta = document.createElement('div');
+                    meta.className = 'meta';
+                    meta.textContent = `${post.date} • ${post.author}`;
+
+                    li.appendChild(a);
+                    li.appendChild(meta);
+                    list.appendChild(li);
+                });
+            })
+            .catch(err => console.error(err));
+    </script>
 
 </body>
 

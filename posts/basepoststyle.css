@@ -1,0 +1,380 @@
+:root {
+    /* Background Colors: */
+    --background-color: #000000;
+    --content-background-color: #ffffff;
+    --sidebar-background-color: #baab94;
+    /* Text Colors: */
+    --text-color: #ffffff;
+    --sidebar-text-color: #ffffff;
+    --link-color: #000000;
+    --link-color-hover: #0000ff;
+    /* Layout */
+    --margin: 0px;
+    --padding: 0px;
+    --border: 17px solid #baab94;
+    --round-borders: 6px;
+    --sidebar-width: 400px;
+}
+
+.pagebody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-top: 0vh;
+}
+
+.main-gif {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(200px, 40vw, 400px);
+    height: auto;
+    z-index: 5;
+}
+
+.bigtext {
+    font-size: clamp(3rem, 10vw, 12rem);
+    text-align: center;
+    font-weight: 900;
+    color: #ffcc00;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'picto';
+    src: url('pictochat.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    font-size: var(--font-size);
+    margin: 0;
+    padding: var(--margin);
+    color: var(--text-color);
+    font-family: 'picto', sans-serif;
+    line-height: 1.2;
+    background: var(--background-color);
+}
+
+#sub-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/bgtile.jpg') repeat;
+    background-size: 15%;
+    opacity: 0.1;
+    z-index: -2;
+    animation: scrollSubBg 30s ease-in-out infinite;
+}
+
+@keyframes scrollSubBg {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 1000px;
+    }
+    100% {
+        background-position: 0 0;
+    }
+    /* scroll vertically */
+}
+
+
+/* Topbar */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* logo left, navbar right */
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    background-color: #010101;
+    outline: 3px inset #ffffff;
+    box-sizing: border-box;
+}
+
+
+/* Logo */
+
+.topbar img {
+    width: 48px;
+    height: 48px;
+    padding: 10px 0;
+}
+
+
+/* Text container */
+
+.text {
+    flex: 1;
+    /* take space between logo and navbar */
+    min-width: 250px;
+    /* reserve space for text so navbar won't move */
+    white-space: nowrap;
+    /* prevent line wrap */
+    overflow: hidden;
+    /* hide overflowing characters */
+    padding-left: 15px;
+}
+
+.titletxt {
+    font-size: 30px;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    /* spacing between buttons */
+}
+
+.navbar .button a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 30px;
+    padding: 5px 10px;
+    transition: color 0.2s;
+    display: inline-block;
+    /* prevent layout jump */
+    transform: rotate(0deg);
+    /* initial rotation state */
+}
+
+.navbar .button a:hover {
+    color: var(--link-color-hover);
+    display: inline-block;
+    animation: smoothWiggle 5s infinite ease-in-out;
+}
+
+
+/* Overlay sweep effect */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 9999;
+    animation: sweep 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes sweep {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(110%);
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(3deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    37.5% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    62.5% {
+        transform: rotate(-3deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    87.5% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.bigtext {
+    font-size: 100px;
+    position: fixed;
+    /* stays relative to viewport */
+    top: 55%;
+    left: 50%;
+    color: #ffcc11;
+    /* use left instead of right */
+    transform: translate(-50%, -50%) scaleY(1.5) scaleX(1.5);
+    /* center exactly */
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+    z-index: -1;
+    pointer-events: none;
+    text-align: center;
+    -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite alternate both;
+    animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite alternate both;
+}
+
+.jello-horizontal {
+    -webkit-animation: jello-horizontal 2s 1s infinite both;
+    animation: jello-horizontal 2s 1s infinite both;
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-11-14 19:23:20
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-contract
+ * ----------------------------------------
+ */
+
+@-webkit-keyframes tracking-in-contract {
+    0% {
+        letter-spacing: 1em;
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-contract {
+    0% {
+        letter-spacing: 1em;
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.caution {
+    position: absolute;
+    /* position relative to page */
+    left: 0;
+    /* align left */
+    width: 100vw;
+    /* full width */
+    height: 32px;
+    /* fixed height */
+    overflow: hidden;
+    /* crop if needed */
+    z-index: 1000;
+}
+
+.caution img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Position the top one at the very top */
+
+@keyframes smoothWiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.caution.top {
+    top: 85vh;
+    animation: smoothWiggle 5s infinite ease-in-out;
+    transform-origin: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.caution.lower {
+    top: 20vh;
+    animation: smoothWiggle 5s infinite ease-in-out;
+    transform-origin: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.abouttext {
+    font-size: 20px;
+    width: 50%;
+}
+
+.names img {
+    width: 160px;
+    padding: 5px;
+}
+
+.pwetty {
+    font-weight: bold;
+    color: #ffcc11;
+    text-shadow: 1px 0px #ffcc11;
+    letter-spacing: 1px;
+}
+
+#post {
+    text-align: left;
+    padding: 20px;
+}
