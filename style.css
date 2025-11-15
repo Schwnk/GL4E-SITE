@@ -23,17 +23,18 @@
     justify-content: center;
     width: 100%;
     position: relative;
-    padding-top: 5vh;
+    padding-top: 0vh;
 }
 
 .main-gif {
-    width: min(400px, 40vw);
+    display: block;
+    max-width: 400px;
+    width: 40vw;
     height: auto;
-    margin-bottom: 20px;
-    position: relative;
-    top: 5%;
-    transform: translateY(5%);
+    margin: 4% auto 20px auto;
     z-index: 5;
+    position: relative;
+    transform: none;
 }
 
 .bigtext {
