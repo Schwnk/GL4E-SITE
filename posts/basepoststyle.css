@@ -46,7 +46,7 @@
 
 @font-face {
     font-family: 'picto';
-    src: url('pictochat.otf') format('opentype');
+    src: url('postassets/pictochat.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -376,5 +376,10 @@ body {
 
 #post {
     text-align: left;
+    align-items: left;
     padding: 20px;
+}
+
+#post .auth {
+    font-size: 24px;
 }

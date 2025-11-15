@@ -1,0 +1,9 @@
+.annoyingbold {
+    font-weight: bolder;
+    color: #ff00aa
+}
+
+.readable {
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
