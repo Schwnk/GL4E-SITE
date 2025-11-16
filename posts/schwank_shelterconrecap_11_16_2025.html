@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<!--HI GUYS DONT TOUCH ANYTHING HERE MWAH!!!!!!!-->
+
+<head>
+    <meta charset="utf-8">
+    <title>GET LIT 4EVER</title>
+    <link rel="stylesheet" href="basepoststyle.css">
+    <link rel="stylesheet" href="postassets/schwank/romp.css">
+    <!--add any user CSS HERE!!!!!!!-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body id="bg">
+    <div id="overlay"></div>
+    <div class="topbar">
+        <a href="index.html">
+            <img style="width:48px;height:48px;padding:10px;" src="postassets/server.jpg">
+        </a>
+
+        <div class="text">
+            <span class="titletxt" id="typedText"></span>
+        </div>
+
+        <div class="navbar">
+            <div class="button">
+                <a href="../projects.html">PROJECTS</a>
+            </div>
+            <div class="button">
+                <a href="../postlist.html">POSTINGS</a>
+            </div>
+            <div class="button">
+                <a href="../about.html">ABOUT</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "GET LIT SUNDAY",
+            "GET LIT MONDAY",
+            "GET LIT TUESDAY",
+            "GET LIT WEDNESDAY",
+            "GET LIT THURSDAY",
+            "GET LIT FRIDAY",
+            "GET LIT SATURDAY",
+            "GET LIT 4EVER"
+        ];
+
+        let index = new Date().getDay(); // start with correct day
+        let charIndex = 0;
+        let deleting = false;
+        const speed = 50;
+        const pause = 1000;
+
+        function tick() {
+            const el = document.getElementById("typedText");
+            const current = messages[index];
+
+            if (!deleting && charIndex <= current.length) {
+                el.textContent = current.substring(0, charIndex++);
+                setTimeout(tick, speed);
+            } else if (deleting && charIndex >= 0) {
+                el.textContent = current.substring(0, charIndex--);
+                setTimeout(tick, speed);
+            } else {
+                // switch modes
+                if (!deleting) {
+                    deleting = true;
+                    setTimeout(tick, pause);
+                } else {
+                    deleting = false;
+                    index = (index + 1) % messages.length;
+                    charIndex = 0;
+                    setTimeout(tick, speed);
+                }
+            }
+        }
+
+        tick();
+    </script>
+</body>
+
+<!--TEMPLATE TIME.... TITLE-->
+<div id="post">
+    <header style="font-size: 48px; font-weight: bold;"> Sheltercon Recap </header>
+    <p class="auth" style="position: relative; bottom: 30px;"> By: <span style="color: #ff00aa;">Schwank</span></p>
+    <p>HI GUYSSSSSS!!! Recently me and a few of the chudlings headed out to #sheltercon7 ayyyyyy #con7. Saw some amazing friends and some insane stuff happened so I figured I'd do a breakdown of my experience LMAO<br> Ok first day flying in..... it got lit...
+        all i'm saying, peep the haul yo</p>
+    <div class="annoying">
+        <img style="height: 200px" src="postassets/schwank/popeyes.jpg">
+        <img class="textvib vibrate-3" style="width: 400px; height:150px;" src="postassets/schwank/popeyestxt.gif">
+    </div>
+    <p>I'm ngl, its been literally over a year since I had popeyes prior to this so this HEALED me yo. This was like the chug jug fortnite but instead of a chug jug it was a large sprite. Anyways we ate this at like 11pm before our flight the night before
+        and played some fucking mario party (i lost) then went to bed, we also went to r1 and i got some mediocre maimai scores but nothing too of note lol. Next day we woke up and went to the airport!!! wow #port. Ok also we ended up going this way through
+        ohare that I never saw prior? it did like a whole ass tour around the airport it looked new also, idk i think maps had us take it bc chicago suburbia hellscape traffic. Flight there went great though besides a slight delay, then we headed to our
+        house and I got to be gay again (rare event (the gay one was in the VEXRA house)). We ended up grouping together and getting some fucking kbbq yo it was GOOD as HELL like mmmm shitttttt im thinking about it still. + for 30 dollars all you can
+        eat it like was way less than i expected. I've had 50 dollar AYCE with that quality lol.</p>
+    <img style="height: 200px" src="postassets/schwank/ayce.jpg">
+    <p>The kimchi was white boy certified (this actually means nothing HAHAHAHAHA) but I had a really good time here! was so great seeing so many friends in one place and mmmm foood. Lowkey I kind of ate too much and it fucked me up but it was easily worth
+        it. Then when leaving we stumbled down the streets of downtown SD to find some wonderful excitement. There was like... an escape room.... for $46 per person...... we didnt do that..... but we ended up running into some hustlers that pawned us
+        their CD "grind music" for $2, they uh... said they made the art themselves and it was ai gen but like, look at this thing this is worth the 2 dollars (signed also). Imma be real... it wasn't really my thing but the dude was nice I hope he's doing
+        ok and makes it far, ik how evil the "industry" can be so I'm hoping for the best.</p>
+    <img style="height: 200px" src="postassets/schwank/grind.jpg">
+    <img style="height: 200px" src="postassets/schwank/grindsigned.jpg">
+    <p>Anyways.. .. after that we got out gloves on... dressed up in our finest attire and went out to a casino, am I going to gatekeep what happened at Jamul... yes I am... just know I didnt win anything HAHAHAH, also word of advice check if the casino
+        ur going to has a ride share bonus, bc... ours did... i spent $0 to gamble $30 so i had a great time. also have a glimpse</p>
+    <a href="https://bsky.app/profile/rumbla.online/post/3m5ci26qqv225" target="_blank">epic jamul function</a>
+    <p>Ok after that fun adventure next day was open decks!!!! which was a ton of fun but also kind of silly bc I forgot my anxiety meds and im ngl.... i was tweaking a bit.... do not forget your meds word of advice from me!!! but i was able to distract
+        myself enough because HOOOOLY shit I had so much fun here, I got to play a 30 min set of entirely of my own music, flips, etc. and I felt really good about it! When I first started djing I was like, oh my music isn't locked in enough for this
+        but here we are!!! I had a wonderful time and I hope anyone in the crowd did also, also the last image was me rushing unreleased stuff last minute HAHAHAHA</p>
+    <video width="320" height="240" controls>
+        <source src="postassets/schwank/getlit.mp4">
+    </video>
+    <img style="height: 200px" src="postassets/schwank/function.jpg">
+    <img style="height: 200px" src="postassets/schwank/function2.jpg">
+    <img style="height: 200px" src="postassets/schwank/working.jpg">
+
+    <p>A ton more stuff happened like the main show, open decks on the last day, we burned a smurf (dont ask), but... word of advice... avoid the fuck out of flying during a government shutdown LMFAOOOO. We ended up getting stranded in the airport for almost
+        a full day, the only reason we got out is Narwall went to the ticketing counter and like begged to be swapped to alaska instead of american. Also can I just say AA fucking sucks I've never had a good experience with them, always stupid late, or
+        something missplaced + 16 dollar/hr wifi for some reason LMAOOOOOO. But yeah we ended up getting home and had a great time yay! Also Narwall ended up getting a polar seltzer on the alaska flight, idk what the deal is but apperently he's a "legendary
+        polar drinker" now so good for him I guess, I also had $20 airport Qdoba bc I was desperate and felt lucky bc Narwall's was actually like laced and awful (mine was like okish)</p>
+
+    <img style="height: 200px" src="postassets/schwank/polar.jpg">
+
+    <p> anyways uh that was fun have some misc photos lmao</p>
+
+    <img style="height: 200px" src="postassets/schwank/misc.jpg">
+    <img style="height: 200px" src="postassets/schwank/misc2.jpg">
+    <img style="height: 200px" src="postassets/schwank/misc3.jpg">
+    <img style="height: 200px" src="postassets/schwank/misc4.jpg">
+</div>
+
+</html>
