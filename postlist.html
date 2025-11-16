@@ -39,7 +39,7 @@
     <ul id="post-list"></ul>
 
     <script>
-        fetch('posts/posts.json')
+        fetch('posts/posts.json?nocache=' + Date.now())
             .then(response => response.json())
             .then(posts => {
                 const list = document.getElementById('post-list');
