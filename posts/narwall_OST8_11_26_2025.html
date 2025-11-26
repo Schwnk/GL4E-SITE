@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<!--HI GUYS DONT TOUCH ANYTHING HERE MWAH!!!!!!!-->
+
+<head>
+    <meta charset="utf-8">
+    <title>GET LIT 4EVER</title>
+    <link rel="stylesheet" href="basepoststyle.css">
+    <!--add any user CSS HERE!!!!!!!-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body id="bg">
+    <div id="overlay"></div>
+    <div class="topbar">
+        <a href="index.html">
+            <img style="width:48px;height:48px;padding:10px;" src="postassets/server.jpg">
+        </a>
+
+        <div class="text">
+            <span class="titletxt" id="typedText"></span>
+        </div>
+
+        <div class="navbar">
+            <div class="button">
+                <a href="../projects.html">PROJECTS</a>
+            </div>
+            <div class="button">
+                <a href="../postlist.html">POSTINGS</a>
+            </div>
+            <div class="button">
+                <a href="../about.html">ABOUT</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "GET LIT SUNDAY",
+            "GET LIT MONDAY",
+            "GET LIT TUESDAY",
+            "GET LIT WEDNESDAY",
+            "GET LIT THURSDAY",
+            "GET LIT FRIDAY",
+            "GET LIT SATURDAY",
+            "GET LIT 4EVER"
+        ];
+
+        let index = new Date().getDay(); // start with correct day
+        let charIndex = 0;
+        let deleting = false;
+        const speed = 50;
+        const pause = 1000;
+
+        function tick() {
+            const el = document.getElementById("typedText");
+            const current = messages[index];
+
+            if (!deleting && charIndex <= current.length) {
+                el.textContent = current.substring(0, charIndex++);
+                setTimeout(tick, speed);
+            } else if (deleting && charIndex >= 0) {
+                el.textContent = current.substring(0, charIndex--);
+                setTimeout(tick, speed);
+            } else {
+                // switch modes
+                if (!deleting) {
+                    deleting = true;
+                    setTimeout(tick, pause);
+                } else {
+                    deleting = false;
+                    index = (index + 1) % messages.length;
+                    charIndex = 0;
+                    setTimeout(tick, speed);
+                }
+            }
+        }
+
+        tick();
+    </script>
+</body>
+
+<!--TEMPLATE TIME.... TITLE-->
+<div id="post">
+	<!--------------------------------------------------------------------------------------------------------------------Level/Lightshow Design on OST 8-------------------------------------------------->
+    <header style="color: yellow; font-size: 48px; font-weight: bolder;">Level/Lightshow Design on OST 8 </header> 
+    <p class="auth" style="position: relative; bottom: 1px;"> By: <span style="color: red;">NARWALL</span></p>
+    <p class="" style="font-size: 28px;"> Hello World! <br> To start off making a post about my work with Beat Saber has been something I always wanted to do. Every since I got contracted and began to really understand the "OST style" I wanted to write something like this.<br> With the release of OST8 I finally felt the confidence in my own work to share my process. Please enjoy the small look into my mind!  (or dont...) </p>
+	
+	<!-------------------------------------------------------------------------------------------------------------------------Badly by: Camellia-------------------------------------------------->
+	<header style="color: yellow; font-size: 34px;">Mapping/Level Design For - Badly by: Camellia</header> 
+	<img style="height: 200px; width: 200px;" src="postassets/narwall/Badly.png" ></img>
+  <p class="" style="font-size: 28px;">To start off all mapping/level is done in the in-game editor, I dont use extenal programs such as chromapper or MMA2 in official work at all. Back when I did customs I was a huge fan of chromapper  (and still am!)  but the in-game editor has so many features that are so important to our workflow now that its not even a question.</p>
+	<p class="" style="font-size: 28px;">When I was informed we were doing OST8 and AaltopahWi, Syndicate, and me were tasked to work on it together. I ended up taking the biggest role for mapper and Aalto focused mostly on lighting but it would not have been possible without them.   (Thanks for letting me take Expert+ guys!)<br> For about 2 weeks I listened to this song DAILY before even mapping it. I don't usually listen that much to a song but the density of this one made it easier to digest when starting the process of mapping. Before placing really anything I bookmark each section of a song, this way its easier to split work but also it just makes more sense in my head. <br>One big difference with how I work now is switching to making timings first with dot notes then going back and doing patterns. This was something Freeek, Kole, and ETAN all suggested I do awhile ago and for making clean and highly structure work it's something I think everyone should do. <br>So my pre-mapping process is something like this: 
+	<ul>
+	<li>Set up file (with BPM, artist info, and .wav file)</li>
+		<li>Set up bookmarks for song structure</li>
+		<li>Make timings using dot notes</li>
+		<li>Mapping time! Yay!!!</li>
+	</ul><p class="" style="font-size: 24px;">This song was a bit of a BEAST to map. The swing mixed with camellia's normal insanity and tone-shifts was a fun challenge and really helped me define what my style looks like. One of the first choices me and Aalto talked about was cordinating certain hits to the lighting. I felt this was a real way to level up the quality even if most would never even notice. I'll talk more about thoes special-hits below.<br> Ok NOW I can talk about the actual design. Thoes felt like important things to cover with all my work for the game.</p>
+	<!----------------------------------------------------------------------------------------------------------------------------Badly EXPERT+-------------------------------------------------->
+	<header style=" color: yellow; font-size: 28px;">Badly - Expert+</header> 
+	<p><iframe width="560" height="315" src="https://www.youtube.com/embed/oBY92wYEUYg?si=Xi-q48_xDSoXXH0i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+	<p class="" style="font-size: 28px;">Going into this song I knew I wanted something that was difficult and techy but the swing forced me to make it feel very different. After some early feedback from ETAN he stepped in and redid a lot of handedness and a few timing's, but kept my structure about the same. After reviewing it I really understood how to take on swing rhythms and make them feel "clean" to the player. <break><br>These changes didnt change most of the map other then moving some notes forward and some backward. Thank You ETAN for helping so much with all of that! After getting the hang of thoes ideas I really hand time to revist some parts and make it feel consistent. Ill go ahead and move on to explaining some sections and highlighting special parts of the map now</p>
+	<p class="" style="font-size: 28px;">
+  <br>Going to structure this section like a list of timestamps with an unlisted youtube video, feel like its the only way to really talk about what I mean without over complicating it. I'm only highlights certain parts and yapping about the ideas here!</p>
+	<ul style="font-size: 28px;">
+	<!--<li><h1 style="color: lightblue; font-size: 28px;">0:24-0:30  +  2:23-2:35 -  </h1>These sections were remapped 3 times, I was never happy with what I made. After ETAN did work I ended up taking a break and redoing this and changing the walls. It ended up as a Left lean, Right lean, then Left Right in half the time. While the walls never make you dodge they do intend to make you shift a bit. The little dot note motifs were also redone even more then the rest of the section. Overall very happy with this part. Came out exactly as I wanted just took awhile. </li>-->
+	  <li><h1 style="color: lightblue; font-size: 28px;">0:31-0:44  +  2:37-2:50 -  </h1>This entire section follows the chevrons like arrows, Aalto had done the lighting for this and I already had the towers going left and right. I made some adjustments then tried to cordinate it in all diffs in some way. I think its correct in all of them but its a different take on it each time. The pattern should be: Left, Right, middle, Right. After this we have some classic build up left right movement but the walls get weirder and weirder as we go.</li>
+		<li><h1 style="color: lightblue; font-size: 28px;">1:29-2:00</h1>This section was the first one I mapped actually! Originally the tower double was a sideways hit not a lean. But after alot of back and forth I swapped it. This allowed the lighting corolation to be alot cooler in the background of your vision. Oh yeah through out this section each of these hits is cordinated to the chevron again!<br> This section was begging for large rotations and fun angles. For example at 1:32.3 ther is 2 arcs that go over into a large chain. This chain hit is matched with the chevron almost making you feel like your hit pushed them to the ground! I choose to make this a very "square" looking section. A lot of the sounds feel mechanical but chaotic so keeping a lot of 90 degree's felt right. At 1:43 there is also a VNJS change to make it look like all around it its "rewinding/speedingup" a tape.(At least I think the sound here is a tape lol)</li>
+		<li><h1 style="color: lightblue; font-size: 28px;">2:00-2:09</h1>From the very moment I heard this song I knew this would be a VNJS gimmick. I settled on bombs with the NJS going really low then up to 15. It makes it feel slow but not so slow it messes the player up (unless you have realllllyyyyy low offset...) The bombs actually end up a lot scarier at lower NJS so I think I want todo more gimmicks like this one!</li>
+		<li><h1 style="color: lightblue; font-size: 28px;">3:33 - 4:03</h1>For this last drop I needed to make something heavy and large since hardcore like this is kinda new to OST. The weight of the hits had to be large so towers, doubles, and stacks were a given. I didnt wanna over do it and the only other example of hard kicks like this was Ludicrous+. I'm proud of the end product I think this is a standout part of the map, while very hard I believe its mostly fair. The swap in kick tone needed a lot of weight so changing to stacks + doubles with a more horizontal focused movement instead of verticle sliced the first half of the drop in 2 parts. Then when she begins to sing again both ideas clash as the song reaches its climax. I also incorperated a increasing difficulty gimmick with the rotation on the hole lyrics slowly changing. At the beginning its a normal hit and at the end its a full 180 degree switch with the arc supporting it. Even from the very intro of the song I was illuding to towers being important. Every section until this point uses them for 1 or 2 sounds. Since the song has such a shift the mapping needed to reflect that. </li>
+	  <!--<li><h1 style="color: lightblue; font-size: 28px;">2:22-2:24  -  </h1>Small VNJS gimmick, using the middle row I tried to block the players vision so the notes look like they just spawned in behind it. You can see them doing the spawn rotation alot more then normal.</li>-->
+	</ul>
+	<!-----------------------------------------------------------------------------------------------------------------------------Badly LIGHTSHOW-------------------------------------------------->
+	<header style=" color: yellow; font-size: 28px;">Badly - Lightshow</header><br> 
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/wQRMwyRLpd4?si=6YuolblUT19m8GiH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+	<p class="" style="font-size: 28px;">Another collab from Aalto and Narwall! Bigger and Better then ever! Me and Aalto work really well together on lights, bouncing ideas off each other comes pretty quickly and Aalto is INSANE at lighting. I have learned alot of what I can do from him and I couldnt do this without that. This is our most complex lightshow yet, it has 11 unique scenes and each of thoes has a few sub-scenes where many things move and interact. The cube enviorment supports this kinda lighting very well but I think even something simple can be made in this! <br>Gonna do the same as above and talk about the ideas and theory in some spots of the show I did.</p>
+	<ul style="font-size: 28px;">
+		<li><h1 style="color: lightblue; font-size: 28px;">0:00 - 0:30</h1>For this first section I made the intro from scratch and it was slowly changed over time. The 3 2 1 numbers was something aalto had made so I reused it for the intro because it was so cool. Nothing super fancy at the beginning here. <br>For the first verse from 0:10-0:30 in it was a frakenstined version of aaltos scene later in the lights. I took the main ideas that were used later and repourposed them in a more simple and less heavy hitting way. I wanted to make his later scene pop more by introducing a more passive + spaced out version of it. I think it worked pretty well? Either way, later in the song at 2:07 when its aaltos variation of it he leaned into the idea that the env is kinda getting tipsy... Since she is singing about drinking I felt it was cool to slowly make the env a bit crazier. Aalto hit it home with the cube structures moving and the almost double vision happening to the chevron. Gives a cool effect like the time between 0:10 section and 2:07 section she sees the world different.</li>
+		<li><h1 style="color: lightblue; font-size: 28px;">1:18 - 2:07</h1>This was my 2nd section for the lights and I wanted to light this part the most out of the whole song. In my mind I kept thinking "this is the part where its a compilation of partying and having a good time". I tried to capture how it feels to be in a rave and hear something like this. The directional motif with the chevrons telling you what way you hit the notes was the coolest part. Because this section is alot of the same I focused my energy on making a clean setup that was satisfying to look at. At 2:00 I was less focused about the lights and more focused on keeping the whole scene brighter. Since the gimmick in the diffs has todo with bombs I wanted to keep them lit to help the player see better. Something that bothers me is when bombs are not properly lit but its really hard to properly light them sometimes.</li>
+		<li><h1 style="color: lightblue; font-size: 28px;">2:53 - 3:05</h1>At this point I was starting to run out of ideas so I kept the ideas here simple. I wanted lasers taking advantage of the bottom of the highways reflection tech so on the left and right they are almost dancing. The rotation of the lasers that bounce off gives a really cool infinity effect on both sides while also making a distinct difference in the visual setup compared to other sections. Then the smooth transition right back into aaltos part makes the beat after the little sax part hit super hard. </li>
+		<li><h1 style="color: lightblue; font-size: 28px;">3:30 - 3:48</h1> This is the part where I wanted to bring the drinking idea back, in my mind this is the part when she has to much and it gets crazy. The very beginning shows the cubes appearing out of no where and going to very high scale settings, in game they feel huge. The hardcore felt like it needed orbital canons with the lasers shooting down on the floor. For every kick the lasers actually scale up to 300 then back to 100 in half a beat, so this makes the strike of them really feel like its doing damage.  The chevrons are set to a few 1000 in scale also and are very slowly moving in the background. I wanted them to almost be like a skybox to help fill the space. This was always the section where I wanted to abuse the new scale mechanic we have and it was SO FUN and I really hope to use scale more often. </li>
+	</ul>
+	<!-----------------------------------------------------------------------------------------------------------------------------Badly ONE SABER-------------------------------------------------->
+	<header style=" color: yellow; font-size: 28px;">Badly - Expert+ (ONE SABER!!!)</header>
+	<p class="" style="font-size: 28px;">ONE SABER!???? WHATTTTTTTT!!!!!!!!<br> This was really cool to finally make a set of one saber's. I actually never even made any in my time with customs so it was a fun learning experience. Spent a lot of time researching maps via playing the game, Kival Evans youtube channel, and talking with Aalto and the folks in office. I learned alot, like many one sabers are newer then there standard equal so they have arcs and chains! Another cool thing was the diff spreads and how its usually kept to 3 diffs sometimes less. Something Aalto explained to me early on was saying to "act like its fencing". This allows you to get more creative with the patterns, not having another hand makes the process really cool and many hits that are "difficult" are either easier or harder. For example forhand and backhand alteration is way more free since you can adjust your body to compensate for one hand and not two.
+		<br><br> The one sabers are a very 1:1 representation of the standard maps in badly, there are a few very intresting alternate hand hits but it was very closly based off the standard. I recommend playing them back to back to really see the differences. I had to come up with some creative solutions for the hand alteration to make it align with the lighting "special hits".</p>
+	<!-----------------------------------------------------------------------------------------------------------------------------Overload by: auvic-------------------------------------------------->
+	<header style="color: yellow; font-size: 34px;">Mapping/Level Design For - Overload by: auvic</header>
+	<img style="height: 200px; width: 200px;" src="postassets/narwall/Overload.png" ></img>
+<!-----------------------------------------------------------------------------------------------------------------------------Overload LIGHTSHOW-------------------------------------------------->
+	<header style=" color: yellow; font-size: 28px;">Overload - Lightshow</header>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/kwh5g4i7p8M?si=gbywE6Hq5x8hdqtD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+<p class="" style="font-size: 28px;">I did 2 sections of the lightshow for this. Actually all my work for this show was done on the go via my laptop. Workflow with that is... messy. But I made it work and was able to make some solid core effects. Aalto came in at the end and spiced it up with some passive lasers and a few extra bits to enhance the scene's. <br>0:40-1:02 AND 3:03 AND 3:19-End - Quite proud of the movement out of Syndicates section, I was always thinking making the cube circle into a curved line would be the best course of action. Took awhile to get set up correct but once it was the rest was easier. The slow passive movement and sharp color changes between the 2 primary rhythms was a simple and effective way to highlight the structures. Feels like a tradition env setup but that was the goal. For the ending section its mostly copy paste and then I got to make the 8!!!! I was so happy to make it and it was ok, but then when aalto was cleaning up some events ran an idea by me to light up the area around it and use the darkness. It made the 8 look soooo clean. I was happy with it before but the shadow made it really a standout version of the 8!<br>1:02 - 1:18  - For the cube pillars I was actually inspired by some of kole and zakkas previous work I have seen though my time working. I wanted something that felt suepr controlled and also was enough movement that it felt fluid and you couldnt even tell when things started and stopped. </p><br>
+
+<header style=" color: yellow; font-size: 28px;">Final Thoughts</header><br>
+<p class="" style="font-size: 28px;">Back when we did OST7 I knew what I was doing but still struggled and had massive amounts of feedback to go through and try to understand what was wanted. It took awhile to really start getting it. I still dont get it! But the gap in my skills from OST 7 where I didnt even do a lightshow and OST 8 where I made 2!?? I really do feel like its getting easier and more fun to make cool experiences, this is probably also because I'm pretty far into my college degree with New Media. If you read all this thank you! I cant wait to keep working on stuff and share my experience doing so! While most posts I make wont be this elaborate OST's are special to beat saber so I felt it was good to dive into this. Maybe I'll make more yap's about stuff now if anything its good for me!<br>Please dont be afraid to reach out to me ask questions or just to say you hated or enjoyed my work! I love all types of feedback and I truly think it makes better work regardless of skill level.</p>
+</div>
+
+</html>
